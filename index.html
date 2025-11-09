@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JulianaBot – Customer Order Assistant</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      text-align: center;
+      margin-top: 100px;
+    }
+    h1 {
+      color: #2b3a67;
+    }
+    p {
+      font-size: 1.2em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to JulianaBot 🤖</h1>
+  <p>Your personal assistant for customer orders and delivery updates.</p>
+  <p>Ask about your order status, delivery time, or returns using the chat icon below.</p>
+
+  <!-- IBM Watson Assistant Chat Integration -->
+  <script>
+    window.watsonAssistantChatOptions = {
+        integrationID: "1634c633-aa4b-4849-8b53-8713e421c79d", // Your Integration ID
+        region: "au-syd", // Region (Australia - Sydney)
+        serviceInstanceID: "e2e7f326-df44-4756-9422-d9fa739f738b", // Your Service Instance ID
+        onLoad: function(instance) { instance.render(); }
+    };
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/latest/WebChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
+</body>
+</html>
